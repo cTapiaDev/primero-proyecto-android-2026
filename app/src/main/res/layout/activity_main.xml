@@ -9,7 +9,7 @@
     android:id="@+id/main"
     android:padding="24dp"
     android:background="#F5F5F5"
-    tools:context=".MainActivity">
+    >
 
     <ImageView
         android:id="@+id/ivPerfil"

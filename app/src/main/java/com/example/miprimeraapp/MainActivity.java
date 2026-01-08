@@ -35,9 +35,27 @@ public class MainActivity extends AppCompatActivity {
             numeroProyectos++;
             actualizarContadores();
         });
+
+        binding.btnEstado.setOnClickListener(v -> {
+            esDisponible = !esDisponible;
+
+            actualizarVisualizacionEstado();
+        });
     }
 
     private void actualizarContadores() {
         binding.tvProyectosCount.setText(String.valueOf(numeroProyectos));
+    }
+
+    private void actualizarVisualizacionEstado() {
+        if (esDisponible) {
+            binding.btnEstado.setText("Disponible");
+            binding.btnEstado.setBackgroundColor(getColor(R.color.teal));
+            binding.tvCargo.setText("Android Developer");
+        } else {
+            binding.btnEstado.setText("Ocupado");
+            binding.btnEstado.setBackgroundColor(getColor(R.color.red));
+            binding.tvCargo.setText("No molestar");
+        }
     }
 }
