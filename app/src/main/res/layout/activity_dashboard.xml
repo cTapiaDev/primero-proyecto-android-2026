@@ -15,14 +15,15 @@
         android:layout_height="0dp"
         android:layout_marginTop="-30dp"
         app:layout_constraintTop_toBottomOf="@id/headerContainer"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toTopOf="@id/footerContainer">
 
         <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:columnCount="2"
             android:padding="16dp"
-            android:alignmentMode="alignMargins">
+            android:alignmentMode="alignMargins"
+            android:clipToPadding="false">
 
             <androidx.cardview.widget.CardView
                 style="@style/DashboardCard"
@@ -447,6 +448,16 @@
         </GridLayout>
 
     </ScrollView>
+
+    <include
+        android:id="@+id/footerContainer"
+        layout="@layout/component_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <!-- Ejercicio
         "El cliente quiere un texto abajo que diga "Versión 1.0".
