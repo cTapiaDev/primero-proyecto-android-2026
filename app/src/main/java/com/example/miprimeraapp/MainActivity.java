@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnContactar.setOnClickListener(v -> {
             Toast.makeText(this, "Enviando correo...", Toast.LENGTH_LONG).show();
 
-            numeroProyectos++;
+            numeroProyectos++; // numeroProyectos = numeroProyectos + 1;
             actualizarContadores();
         });
 
