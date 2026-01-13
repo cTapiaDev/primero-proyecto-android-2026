@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Mi Primera App</string>
 
+
+    <string name="open_nav">Abrir</string>
+    <string name="close_nav">Cerrar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

@@ -1,13 +1,10 @@
 package com.example.miprimeraapp;
 
-import android.os.Bundle;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
+import android.content.Intent;
+import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 import com.example.miprimeraapp.databinding.ActivityDashboardBinding;
 
@@ -29,8 +26,17 @@ public class Dashboard extends AppCompatActivity {
     private void setupDashboardClicks() {
 
         binding.cardUsers.setOnClickListener(v -> {
-            Toast.makeText(this, "Abriendo gestión de usuarios...", Toast.LENGTH_LONG).show();
-            // AQUÍ AGREGAREMOS UN INTENT (navegación)
+            // Toast.makeText(this, "Abriendo gestión de usuarios...", Toast.LENGTH_LONG).show();
+
+            // Genera la intención de movernos de vista (Activity)
+            Intent intent = new Intent(Dashboard.this, DetalleActivity.class);
+
+            // Enviamos información hacía DetalleActivity
+            intent.putExtra("CLAVE_TITULO", "Gestión de Usuarios");
+            intent.putExtra("CLAVE_DESC", "Aquí podrás administrar las altas, bajas y permisos.");
+
+            // Es la instrucción para que nos mueva la app
+            startActivity(intent);
         });
     }
 }
