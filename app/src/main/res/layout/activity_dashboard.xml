@@ -57,7 +57,7 @@
 
             <androidx.cardview.widget.CardView
                 style="@style/DashboardCard"
-                android:id="@+id/cardUsers2"
+                android:id="@+id/cardTabs"
                 android:layout_width="0dp"
                 android:layout_height="140dp"
                 android:layout_columnWeight="1"
@@ -80,7 +80,7 @@
                         style="@style/DashboardText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Usuarios"/>
+                        android:text="Tabs"/>
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

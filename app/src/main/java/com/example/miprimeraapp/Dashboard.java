@@ -38,5 +38,10 @@ public class Dashboard extends AppCompatActivity {
             // Es la instrucción para que nos mueva la app
             startActivity(intent);
         });
+
+        binding.cardTabs.setOnClickListener(v -> {
+            Intent intent = new Intent(this, TabActivity.class);
+            startActivity(intent);
+        });
     }
 }

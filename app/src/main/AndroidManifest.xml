@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiPrimeraApp">
         <activity
+            android:name=".TabActivity"
+            android:exported="false" />
+        <activity
             android:name=".FragmentActivity"
             android:exported="false" />
         <activity
@@ -21,13 +24,13 @@
             android:name=".DetalleActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Dashboard"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Dashboard"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
