@@ -41,7 +41,7 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintStart_toEndOf="@id/ivAvatar"
             app:layout_constraintTop_toTopOf="@id/ivAvatar"
-            app:layout_constraintEnd_toStartOf=""/>
+            app:layout_constraintBottom_toTopOf="@id/tvArea"/>
 
         <TextView
             android:id="@+id/tvArea"

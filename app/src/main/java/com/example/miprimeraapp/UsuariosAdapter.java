@@ -1,6 +1,9 @@
 package com.example.miprimeraapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -21,17 +24,23 @@ public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.Usuari
     @NonNull
     @Override
     public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        ItemUserBinding binding = ItemUserBinding.inflate(
+                LayoutInflater.from(parent.getContext()),
+                parent,
+                false
+        );
+        return new UsuarioViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
-
+        Usuario usuarioActual = listaUsuarios.get(position);
+        holder.bind(usuarioActual);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listaUsuarios.size();
     }
 
     public class UsuarioViewHolder extends RecyclerView.ViewHolder {
@@ -54,6 +63,23 @@ public class UsuariosAdapter extends RecyclerView.Adapter<UsuariosAdapter.Usuari
             } else {
                 binding.viewStatus.setBackgroundColor(Color.parseColor("#F44336"));
             }
+
+
+            binding.getRoot().setOnClickListener(v -> {
+                Context context = v.getContext();
+
+                Intent intent = new Intent(context, DetalleActivity.class);
+
+                intent.putExtra("CLAVE_TITULO", usuario.getNombre());
+
+                String descripcion = "Área: " + usuario.getArea() + "\n" +
+                                     "Email: " + usuario.getEmail() + "\n" +
+                                     "Estado: " + (usuario.isEsActivo() ? "Activo" : "Inactivo");
+
+                intent.putExtra("CLAVE_DESC", descripcion);
+
+                context.startActivity(intent);
+            });
         }
     }
 }

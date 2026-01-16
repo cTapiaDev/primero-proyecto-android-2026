@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiPrimeraApp">
         <activity
-            android:name=".Dashboard"
+            android:name=".FragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UserListActivity"
             android:exported="false" />
         <activity
             android:name=".DetalleActivity"
@@ -24,7 +27,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".FragmentActivity"
+            android:name=".Dashboard"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
